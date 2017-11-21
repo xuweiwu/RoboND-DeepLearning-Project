@@ -6,6 +6,7 @@
 [image1]: ./docs/misc/model_architecture.png
 
 ### Network Architecture
+
 The implemented fully converlutional network consists of 3 encoders, an intermediate 1x1 convolutional layer, 3 decoders, and a final convolutional layer. The network achitecture is illustrated in the following figure. 
 
 ![image1]
@@ -43,6 +44,7 @@ The number of epochs is set to 50. In the last 10 epochs the loss cannot monoton
 The hyperparameters for steps per epoch and validation steps are chosen according to the size of the training and validation set while keeping a constant batch size.
 
 ### Limitations
+
 The current model is trained by labeled data where the target is marked as red in the camera images. During the data collection, labeled images are automatically generated for the 3 classes (cam2 for other humans, cam3 for the target, and cam4 for the background), and combined to the single set of mask images for training. Therefor, in order to make the model work well for following another object, new data will need to be collected where the target object and other classes are correctly labeld using similar strategies. 
 
 The network architecture itself can mostly remain unchanged, only the channel depth of the final layer might need to be changed according to a new number of classes.
@@ -54,6 +56,9 @@ A major enhancement can be made by collecting more camera images with higher res
 Improvement in performance of the training might also be made by tunning the regularization parameters.
 
 ### References
+
 [1] Xception: Deep Learning with Depthwise Separable Convolutions. https://arxiv.org/abs/1610.02357
+
 [2] Fully Convolutional Networks for Semantic Segmentation. https://arxiv.org/abs/1605.06211
+
 [3] SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation. https://arxiv.org/abs/1511.00561
